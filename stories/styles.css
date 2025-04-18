@@ -1,0 +1,23 @@
+/* src/stories/styles.css */
+.storybook-docs {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+  }
+  
+  .storybook-docs h1, .storybook-docs h2, .storybook-docs h3 {
+    color: #333;
+  }
+  
+  .storybook-docs a {
+    color: #1ea7fd;
+    text-decoration: none;
+  }
+  
+  .storybook-docs a:hover {
+    text-decoration: underline;
+  }
+  
+  

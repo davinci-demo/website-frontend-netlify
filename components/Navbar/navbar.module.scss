@@ -1,0 +1,199 @@
+@import "../../styles/mixins.scss";
+
+/*mixin b($width=1px,$color:red)*/
+.navbar {
+  @apply bg-black py-2 items-center relative z-50;
+  display: grid;
+  grid-template-columns: 1fr 75px 1fr;
+  grid-template-areas: "leftside logo rightside";
+  //-webkit-animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  //animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  @at-root{
+    .navbarLeft {
+      grid-area: leftside;
+      @apply xs:hidden 3xl:flex justify-evenly ml-2;
+      //@apply xs:hidden 3xl:flex justify-evenly ml-0;
+    }
+    .navbarRight {
+      grid-area: rightside;
+      @apply xs:hidden 3xl:flex  justify-evenly mr-2;
+      //@apply xs:hidden 3xl:flex  justify-evenly mr-0;
+    }
+    
+    // logo
+    .navLogo {
+      grid-area: logo;
+      @apply text-gray-300 text-center;
+    }
+  }
+}
+
+//under navbar styling
+.underNav {  // this has to be constrained to grid
+  // @apply w-full h-12 flex justify-evenly items-center bg-gradient-to-r from-primaryMid to-primaryDark xs:py-2 xs:px-4 sm:px-0 3xl:px-0 3xl:py-7;
+  @apply w-full  grid  bg-gradient-to-r from-primaryMid to-primaryDark   sm:px-0 3xl:px-0 ;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "donate searchbar profile";
+  @at-root {
+
+    //position of search bar
+    .searchClasses {
+      // @apply flex xs:mx-auto sm:mr-2 md:mr-8 lg:mr-28 xl:mr-56 2xl:mr-80 3xl:mx-auto;
+      @apply mx-auto flex justify-center items-center;
+
+    }
+    // styling for the search bar
+    .searchInputContainer {
+      grid-area: searchbar;
+      @apply h-8 xs:w-48 sm:w-80 lg:w-96 3xl:w-[500px] bg-white flex items-center rounded-sm border-none xs:pl-4;
+      transform-origin: 0% 50%;
+      animation: 0.5s growX forwards;
+      z-index: 25;
+    }
+    .searchBar {
+      @apply border-0 h-6 bg-transparent pl-2  text-[14];
+      width: 90%;
+      border: 1px solid transparent;
+      border-radius: inherit;
+    }
+    .searchBar:focus {
+      // box-shadow: 0 0 3px 0 #1183d6;
+      // border-color: #1183d6;
+      outline: none;
+    }
+    .submitButton[type="submit"] {
+      text-indent: -999px;
+      overflow: hidden;
+      width: 50px;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      border-left : 2px solid var(--primaryMid);
+      border-radius: inherit;
+      background: var(--primaryColor) url("../../public/images/searchIcon.svg") no-repeat
+        center;
+      background-size: 55%;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: all 0.1s;
+      &:hover{
+        background: var(--primaryMid) url("../../public/images/searchIcon.svg") no-repeat center;
+        background-size: 60%;
+      }
+    }
+
+    //search bar dropdown styling
+    .searchDropdown {
+      z-index: 25;
+    }
+    .searchResults {
+      @apply hidden absolute bg-gray-950 p-0 origin-top;
+      list-style: none;
+      color: white;
+      border-radius: 2.5px;
+      height: 50%;
+      padding: 10px;
+      justify-self: center;
+      left: 25%;
+      right: 25%;
+      top: 27%;
+    }
+    .open {
+      @apply absolute block;
+      animation: 0.25s grow forwards;
+    }
+
+    // profile text and image container styling
+    .imageProfileContainer {
+      grid-area: profile;
+      @apply  relative xs:w-full  2xl:w-full flex xs:justify-evenly xs:flex-row-reverse sm:flex-row items-center xs:gap-0 md:justify-end md:gap-6 3xl:gap-6 xs:pr-0 md:pr-6 py-1;
+      animation: appear 2s;
+    }
+    .profileImage {
+      @apply relative xs:w-9 xs:h-9 lg:w-10 lg:h-10 3xl:w-[40px] 3xl:h-[40px]  border-2 border-black border-solid rounded-full;
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  z-index: 20;
+  opacity: 0.8;
+  animation: fadein 0.2s;
+}
+
+
+
+.signInButton {
+  @apply xs:z-40 3xl:z-40 xs:absolute xs:-top-4 xs:w-20 xs:left-4 xs:scale-75 2xl:relative 2xl:top-0 sm:scale-100 ml-10 md:ml-20 lg:ml-24 3xl:ml-6 bg-primary-1/2 rounded-sm  px-2 py-0.5 border-primary-1 border-2 text-white hover:bg-primary-1 hover:text-primaryMid;
+  cursor: pointer;
+}
+// animations
+@keyframes growX {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+@keyframes grow {
+  0% {
+    transform: scaleY(0);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
+}
+@-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

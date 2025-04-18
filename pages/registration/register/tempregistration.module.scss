@@ -1,0 +1,21 @@
+@import '../../../styles/mixins.scss';
+
+.tempregistration{
+    @apply relative bottom-0 flex flex-col items-start border-b-8 border-b-primaryMid;
+}
+.formIframe {
+    width: 100%;
+    max-width: 650px; /* Restricts the width */
+    height: 2200px; /* Set the height */
+    border: 2px solid #ccc; /* Optional border styling */
+    overflow-y: auto; /* Hides overflow */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds shadow for effect */
+    border-radius: 8px; /* Rounds the corners */
+    margin: 0 auto; /* Centers the iframe container */
+  }
+  
+  .formIframe iframe {
+    width: 100%; /* Ensures iframe takes full width of its container */
+    height: 100%; /* Ensures iframe takes full height of its container */
+    border: none; /* Removes iframe border */
+  }

@@ -1,0 +1,32 @@
+@import '../../styles/mixins.scss';
+.appMenu {
+  @apply z-40 xs:absolute xs:left-4;
+}
+.appMenuContainer {
+  @apply xs:flex xs:flex-col xs:items-center xs:justify-evenly 3xl:hidden;
+  
+}
+.menuBG {
+  
+  @apply absolute -right-4 top-16 z-50 flex flex-col items-start  w-72 h-[475px] overflow-y-scroll rounded-b-md bg-primaryMid pb-1;
+  //@apply relative -z-50 flex flex-col justify-center  w-72  overflow-y-scroll rounded-b-md bg-primaryMid pb-1;
+
+  //@include b;
+  & > * {
+    @apply text-white hover:bg-primaryMid;
+  }
+}
+.wideMenuBG{
+    transform-origin: right center;
+    // @apply absolute  w-[800px] -right-4 top-28 z-50 flex  justify-evenly  flex-wrap rounded-b-md bg-primaryMid pb-1 ;
+    width: var(--appMenuWidth);
+    @apply absolute mx-auto -left-4 top-28 z-50 grid grid-cols-5 rounded-b-md bg-primaryMid  ;
+    
+    & > *  {
+        @apply  text-white text-base  mb-3;
+        
+      }
+}
+.category {
+  @apply relative w-full bg-primaryDark px-1 py-2 text-center text-lg;
+}

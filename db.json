@@ -1,0 +1,278 @@
+{
+  "courses": [
+    {
+      "courseId": "intromath",
+      "title": "Introduction to Math (Arithmetic - Prealgebra)",
+      "description": "This is a course on basics and fundamentals",
+      "image": "https://placehold.co/350x96/png",
+      "subject": "Math",
+      "published": "2024-08-16T18:42:30.492Z",
+      "instructor": "instructor",
+      "updated": "2024-08-16T18:42:30.492Z",
+      "lessons": [
+        {
+          "lessonId": "examplelesson",
+          "title": "Introduction to Math 1",
+          "content": "[The lesson content]",
+          "resource_url": "https://resource"
+        },{
+          "lessonId":"examplelesson",
+          "title": "Introduction to Math 2",
+          "content": "[The lesson content]",
+          "resource_url": "https://resource"
+        },{
+          "lessonId": "examplelesson",
+          "title": "Introduction to Math 3",
+          "content": "[The lesson content]",
+          "resource_url": "https://resource"
+        },{
+          "lessonId":"examplelesson",
+          "title": "Introduction to Math 4",
+          "content": "[The lesson content]",
+          "resource_url": "https://resource"
+        },{
+          "lessonId":"examplelesson",
+          "title": "Introduction to Math 5",
+          "content": "[The lesson content]",
+          "resource_url": "https://resource"
+        }
+      ]
+    },
+    {
+      "courseId": "001algebra",
+      "title": "Algebra I",
+      "description": "This is an introductory course.",
+      "image": "https://placehold.co/350x96/png",
+      "subject": "Math",
+      "published": "2024-08-16T18:42:30.492Z",
+      "instructor": "instructor",
+      "updated": "2024-08-16T18:42:30.492Z",
+      "lessons": [
+        {
+          "lessonId": "examplelesson",
+          "title": "Basic Algebra Concepts",
+          "content": "[The lesson content]",
+          "resource_url": "https://resource"
+        },{
+          "lessonId":"examplelesson",
+          "title": "Linear Equations",
+          "content": "[The lesson content]",
+          "resource_url": "https://resource"
+        },{
+          "lessonId": "examplelesson",
+          "title": "Functions",
+          "content": "[The lesson content]",
+          "resource_url": "https://resource"
+        },{
+          "lessonId":"examplelesson",
+          "title": "Radicals",
+          "content": "[The lesson content]",
+          "resource_url": "https://resource"
+        }
+      ]
+    },
+    {
+      "courseId": "002algebra",
+      "title": "Algebra II",
+      "description": "This is the second course in algebra",
+      "image": "https://placehold.co/350x96/png",
+      "subject": "Math",
+      "published": "2024-08-16T18:42:30.492Z",
+      "instructor": "instructor",
+      "updated": "2024-08-16T18:42:30.492Z",
+      "lessons": [
+        {
+          "lessonId": "examplelesson",
+          "title": "Polynomials",
+          "content": "[The lesson content]",
+          "resource_url": "https://resource"
+        },{
+          "lessonId":"examplelesson",
+          "title": "Quadratic Functions",
+          "content": "[The lesson content]",
+          "resource_url": "https://resource"
+        },{
+          "lessonId": "examplelesson",
+          "title": "Exponential Functions",
+          "content": "[The lesson content]",
+          "resource_url": "https://resource"
+        }
+      ]
+    },
+    {
+      "courseId": "001geometry",
+      "title": "Geometry",
+      "description": "This is an introduction course in geometry",
+      "image": "https://placehold.co/350x96/png",
+      "subject": "Math",
+      "published": "2024-08-16T18:42:30.492Z",
+      "instructor": "instructor",
+      "updated": "2024-08-16T18:42:30.492Z",
+      "lessons": [
+      ]
+    },
+    {
+      "courseId": "001precalc",
+      "title": "Precalculus",
+      "description": "This is an introduction course in precalculus",
+      "image": "https://placehold.co/350x96/png",
+      "subject": "Math",
+      "published": "2024-08-16T18:42:30.492Z",
+      "instructor": "instructor",
+      "updated": "2024-08-16T18:42:30.492Z",
+      "lessons": [
+      ]
+    },
+    {
+      "courseId": "001apcalc",
+      "title": "AP Calculus AB/BC",
+      "description": "This is an introduction course in precalculus",
+      "image": "https://placehold.co/350x96/png",
+      "subject": "Math",
+      "published": "2024-08-16T18:42:30.492Z",
+      "instructor": "instructor",
+      "updated": "2024-08-16T18:42:30.492Z",
+      "lessons": [
+      ]
+    },
+    {
+      "courseId": "001abphysics",
+      "title": "Algebra-based Physics (AP Physics 1/2)",
+      "description": "This is an introduction course in algebra-based physics.",
+      "image": "https://placehold.co/350x96/png",
+      "subject": "Physics",
+      "published": "2024-08-16T18:42:30.492Z",
+      "instructor": "instructor",
+      "updated": "2024-08-16T18:42:30.492Z",
+      "lessons": [
+      ]
+    },
+    {
+      "courseId": "001cbphysics",
+      "title": "Calculus-based Physics (AP Physics C - Mechanics/E&M)",
+      "description": "This is an introduction course in algebra-based physics.",
+      "image": "https://placehold.co/350x96/png",
+      "subject": "Physics",
+      "published": "2024-08-16T18:42:30.492Z",
+      "instructor": "instructor",
+      "updated": "2024-08-16T18:42:30.492Z",
+      "lessons": [
+      ]
+    },
+    {
+      "courseId": "001spanish",
+      "title": "Spanish I",
+      "description": "This is a course on basics and fundamentals to Spanish",
+      "image": "https://placehold.co/350x96/png",
+      "subject": "Spanish (All Levels Available incl. AP)",
+      "published": "2024-08-16T18:42:30.492Z",
+      "instructor": "instructor",
+      "updated": "2024-08-16T18:42:30.492Z",
+      "lessons": [
+        {
+          "lessonId": "examplelesson",
+          "title": "Nouns",
+          "content": "[The lesson content]",
+          "resource_url": "https://resource"
+        },{
+          "lessonId":"examplelesson",
+          "title": "Verbs",
+          "content": "[The lesson content]",
+          "resource_url": "https://resource"
+        },{
+          "lessonId": "examplelesson",
+          "title": "Adjectives",
+          "content": "[The lesson content]",
+          "resource_url": "https://resource"
+        }
+      ]
+    },
+    {
+      "courseId": "002spanish",
+      "title": "Spanish II",
+      "description": "This is a course on Spanish",
+      "image": "https://placehold.co/350x96/png",
+      "subject": "Spanish (All Levels Available incl. AP)",
+      "published": "2024-08-16T18:42:30.492Z",
+      "instructor": "instructor",
+      "updated": "2024-08-16T18:42:30.492Z",
+      "lessons": [
+      ]
+    },
+    {
+      "courseId": "003spanish",
+      "title": "Spanish III",
+      "description": "This is a course on Spanish",
+      "image": "https://placehold.co/350x96/png",
+      "subject": "Spanish (All Levels Available incl. AP)",
+      "published": "2024-08-16T18:42:30.492Z",
+      "instructor": "instructor",
+      "updated": "2024-08-16T18:42:30.492Z",
+      "lessons": [
+      ]
+    },
+    {
+      "courseId": "004spanish",
+      "title": "Spanish IV",
+      "description": "This is a course on Spanish",
+      "image": "https://placehold.co/350x96/png",
+      "subject": "Spanish (All Levels Available incl. AP)",
+      "published": "2024-08-16T18:42:30.492Z",
+      "instructor": "instructor",
+      "updated": "2024-08-16T18:42:30.492Z",
+      "lessons": [
+      ]
+    },
+    {
+      "courseId": "001apspanish",
+      "title": "AP Spanish",
+      "description": "This is an advanced course on Spanish",
+      "image": "https://placehold.co/350x96/png",
+      "subject": "Spanish (All Levels Available incl. AP)",
+      "published": "2024-08-16T18:42:30.492Z",
+      "instructor": "instructor",
+      "updated": "2024-08-16T18:42:30.492Z",
+      "lessons": [
+      ]
+    },
+    {
+      "courseId": "001elemenglish",
+      "title": "Elementary",
+      "description": "This is an elementary course on English",
+      "image": "https://placehold.co/350x96/png",
+      "subject": "English Language Arts",
+      "published": "2024-08-16T18:42:30.492Z",
+      "instructor": "instructor",
+      "updated": "2024-08-16T18:42:30.492Z",
+      "lessons": [
+      ]
+    },
+    {
+      "courseId": "",
+      "title": "",
+      "description": "",
+      "image": "https://placehold.co/350x96/png",
+      "subject": "Computer programming",
+      "published": "2024-08-16T18:42:30.492Z",
+      "instructor": "instructor",
+      "updated": "2024-08-16T18:42:30.492Z",
+      "lessons": [
+      ]
+    },
+    {
+      "courseId": "00java",
+      "title": "Introduction to Java",
+      "description": "This is a course on basics and fundamentals to the Java programming language",
+      "image": "https://placehold.co/350x96/png",
+      "subject": "Computer Science",
+      "published": "2024-08-16T18:42:30.492Z",
+      "instructor": "instructor",
+      "updated": "2024-08-16T18:42:30.492Z",
+      "lessons": [
+        
+      ]
+    }
+  ]
+}
+
+

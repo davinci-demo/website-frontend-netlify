@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "./scrollStyles.scss";
+
+:root{
+  --primaryColor: hsla(47, 76%, 64%,1);
+  --primaryColor50 : hsla(47, 76%, 64%,0.5);
+  --primaryMid: hsla(37, 68%, 36%,1);
+  --primaryDark: hsla(36, 78%, 16%,1);
+  --primaryNuetral: hsla(57, 62%, 86%,1);
+
+  --appMenuWidth: 600px;
+  --navButtonWidth: 90px;
+
+  --screenWidth: 1024;
+}
+html{
+  scrollbar-gutter: stable;
+}
+body {
+  @apply bg-black text-black box-border overflow-x-hidden;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+

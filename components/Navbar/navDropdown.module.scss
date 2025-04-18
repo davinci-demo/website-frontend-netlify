@@ -1,0 +1,50 @@
+@import '../../styles/mixins.scss';
+
+.navButton {
+  @apply hidden xl:block text-white  overflow-hidden hover:text-primary-1;
+  //width: var(--navButtonWidth);
+}
+.inactiveNavButton {
+  @apply hidden xl:block text-gray-700  overflow-hidden pointer-events-none select-none;
+  
+}
+.dropdownContainer {
+  @apply relative;
+}
+
+.dropdownMenu {
+  @apply hidden absolute top-9 left-0 bg-black p-0 origin-top z-50;
+  list-style: none;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.open {
+  @apply block;
+  animation: 0.25s grow forwards;
+}
+
+.menuItems {
+  @apply p-1 border-b-0 text-sm hover:text-primary-1;
+  border-radius: 5px;
+  transition: font-size 0.1s;
+}
+.inactiveMenuItems {
+  @apply p-1 border-b-0 text-sm text-gray-700 pointer-events-none select-none;
+  border-radius: 5px;
+}
+
+.menuItems:hover {
+  font-size: 0.95rem;
+}
+
+@keyframes grow {
+  0% {
+    transform: scaleY(0);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}

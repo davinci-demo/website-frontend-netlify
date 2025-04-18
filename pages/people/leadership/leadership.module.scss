@@ -1,0 +1,36 @@
+@import "@/styles/mixins.scss";
+
+
+.infoSection {
+    @apply w-full bg-black flex items-center justify-end p-24 border-b-8 border-b-primaryMid;
+}
+
+.container {
+    @apply flex text-white w-full items-center justify-center border-4 border-primaryMid rounded-xl py-8;
+    @include bgRadGradient;
+}
+
+.name {
+    width: 480px;
+    @apply text-4xl font-normal uppercase mb-2;
+}
+
+.title {
+    width: 480px;
+    @apply text-xl font-normal uppercase mb-12 text-primaryMid;
+}
+
+
+.text {
+    width: 580px;
+    @apply text-xl font-normal;
+}
+
+
+.cards {
+    @apply grid gap-x-24 gap-y-24 grid-cols-2;
+}
+
+.card {
+    @apply flex flex-col justify-center;
+}

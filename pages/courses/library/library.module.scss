@@ -1,0 +1,54 @@
+@import '../../../styles/mixins.scss';
+
+.disclaimerSection {
+  @apply mx-auto mb-16 sm:w-5/6 w-1/2 lg:w-2/3 2xl:w-1/2 text-base text-white;
+}
+.container {
+  @apply flex mx-8  flex-col items-center  py-8  text-white ;
+}
+.subjectGroup {
+  @apply mt-6 flex max-w-6xl flex-col p-6 ;
+  
+}
+.subjectTitle {
+  @apply p-4 text-center text-4xl text-primaryNeutral;
+  
+}
+.courses {
+  @apply mx-auto flex flex-wrap gap-2 lg:gap-6  items-center xs:justify-center  lg:justify-normal ;
+  //@includes (15px,yellow);
+}
+.coursePreviewContainer {
+  @apply m-2 sm:mx-auto sm:w-5/6 lg:w-[350px]  flex-col rounded-xl overflow-hidden;
+   @include b(3px, rgb(175, 135, 2));
+   border-style: solid;
+   & > img{
+    @apply rounded-lg ;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+   }
+  @at-root {
+    .courseImage {
+      @apply h-24;
+    }
+    .courseInfo {
+      @apply relative h-[200px] flex flex-col p-4 bg-primaryDark rounded-lg;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      @include b(5px);
+      @at-root {
+        /*for now*/
+        .courseTitle{
+          @apply text-[1.35rem] px-2 font-semibold;
+        }
+        .courseDescription{
+          @apply grow text-lg p-2 h-20 ;
+        }
+        .courseUpdated,
+        .courseLessons {
+          @apply relative bottom-0  h-6 text-sm pl-2 ;
+        }
+      }
+    }
+  }
+}

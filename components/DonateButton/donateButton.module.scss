@@ -1,0 +1,5 @@
+//donate button
+.donateButton {
+    @apply xs:z-50 3xl:z-40 xs:relative xs:top-0 xs:-left-6 xs:scale-75  3xl:relative 3xl:top-0 3xl:scale-100 ml-10 3xl:ml-12 bg-transparent rounded-sm  px-2 py-0.5 border-primary-1 border-2 text-primary-1 hover:bg-primary-1 hover:text-primaryMid;
+    cursor: pointer;
+  }

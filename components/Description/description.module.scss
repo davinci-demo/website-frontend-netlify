@@ -1,0 +1,18 @@
+@import "../../styles/mixins.scss";
+
+.description {
+  @apply flex items-center justify-center w-full p-0 bg-inherit;
+}
+
+.container {
+  @apply w-5/6 h-[360px] flex flex-col justify-evenly items-center p-2 bg-black;
+   
+}
+
+.title {
+  @apply w-5/6 text-5xl text-white font-julius font-normal text-center uppercase;
+}
+
+.text {
+  @apply w-5/6 text-3xl font-normal font-vietnam text-white text-center;
+}
