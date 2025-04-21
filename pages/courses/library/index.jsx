@@ -29,7 +29,9 @@ export async function getStaticProps() {
   try {
     console.log('Fetching courses...');
     // const res = await fetch('http://localhost:3000/api/courses/exampleCourses');
-    const res = await fetch('http://localhost:3001/courses'); //<--db.json
+    ////const res = await fetch('http://localhost:3001/courses'); //<--db.json
+    const resurl = process.env.DEMO_BACKEND_URL +'/courses';
+    const res = await fetch(resurl); //<--db.json
     const data = await res.json();
     //console.log('Fetched data:', data);
     return {
