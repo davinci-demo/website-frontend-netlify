@@ -8,6 +8,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import CourseModal from '../../../components/CourseModal/CourseModal';
 // import { IoMdCloseCircleOutline } from 'react-icons/io';
+import { createClient, type NormalizeOAS } from 'fets'
+import type openapi from '../../../openapi'
 
 const p = console.log;
 
@@ -27,13 +29,15 @@ const disclaimerNotice =
 //** THIS WILL BE USED IN PRODUCTION */
 export async function getStaticProps() {
   try {
-
     // const res = await fetch('http://localhost:3000/api/courses/exampleCourses');
     ////const res = await fetch('http://localhost:3001/courses'); //<--db.json
-    const resurl = process.env.DEMO_BACKEND_URL +'/courses';
 
-    const res = await fetch(resurl);
-    const data = await res.json();
+    const client = createClient<NormalizeOAS<typeof openapi>>({
+      endpoint: process.env.DEMO_BACKEND_URL
+    })
+
+    const response = await client['/courses'].get()
+    const data = await response.json();
 
     if (data.success) {
       return {
@@ -157,7 +161,7 @@ function CourseLibrary({courses}) {
               <div className={styles.subjectTitle}>{subject}</div>
               <div className={styles.courses}>
                 {coursesBySubject[subject]?.map((course) => (
-                  <div key={`course-${course.courseid}`} onClick={(e) => handleLinkClick(course, e)} className="">
+                  <div key={`course-${course.courseId}`} onClick={(e) => handleLinkClick(course, e)} className="">
                     <div id={`${course.title}`} className={styles.coursePreviewContainer}>
                       <Image className={styles.courseImage} src={course.image} width={700} height={300} alt={course.title} />
                       <div className={styles.courseInfo}>

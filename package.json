@@ -10,7 +10,6 @@
     "prettier": "prettier --write --ignore-path .gitignore .",
     "storybook": "storybook dev -p 3002",
     "build-storybook": "storybook build"
-
   },
   "dependencies": {
     "@auth/mongodb-adapter": "^2.0.12",
@@ -25,6 +24,7 @@
     "concurrently": "^8.2.1",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
+    "fets": "^0.8.5",
     "gsap": "^3.12.4",
     "json-server": "^1.0.0-beta.1",
     "jsonwebtoken": "^9.0.2",
