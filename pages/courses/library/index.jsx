@@ -8,7 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import CourseModal from '../../../components/CourseModal/CourseModal';
 // import { IoMdCloseCircleOutline } from 'react-icons/io';
-import { createClient, type NormalizeOAS } from 'fets'
+import { createClient, NormalizeOAS } from 'fets'
 import type openapi from '../../../openapi'
 
 const p = console.log;
