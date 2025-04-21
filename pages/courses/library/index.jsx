@@ -31,14 +31,16 @@ export async function getStaticProps() {
     // const res = await fetch('http://localhost:3000/api/courses/exampleCourses');
     ////const res = await fetch('http://localhost:3001/courses'); //<--db.json
     const resurl = process.env.DEMO_BACKEND_URL +'/courses';
-    const res = await fetch(resurl); //<--db.json
+    const res = await fetch(resurl);
     const data = await res.json();
     //console.log('Fetched data:', data);
-    return {
-      props: {
-        courses: data,
-      },
-    };
+    if (data.success) {
+      return {
+        props: {
+          courses: data.result,
+        },
+      };
+    }
   } catch (error) {
     console.error('Error fetching courses:', error);
     return {
