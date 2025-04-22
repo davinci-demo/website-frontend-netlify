@@ -10,7 +10,7 @@ import CourseModal from '../../../components/CourseModal/CourseModal';
 
 import { createClient, type NormalizeOAS, type OASOutput } from 'fets';
 import type openapi from '../../../openapi';
-type Course = OASOutput<NormalizeOAS<typeof openapi>, '/courses/{courseId}', 'get'>;
+type Course = OASOutput<NormalizeOAS<typeof openapi>, '/api/courses/{courseId}', 'get'>;
 ////const p = console.log;
 const disclaimerNotice =
   'Please note that the Institute is in its beginning stages, and thus still developing its curriculum. Due to the lack of tutors, we are unable to provide as many courses as of now, but we plan to rapidly expand our curriculum as we gain more volunteers.';
@@ -45,7 +45,7 @@ const CourseLibrary: NextPage = () => {
       endpoint: process.env.DEMO_BACKEND_URL
     });
     const fetchCourses = async () => {
-      const response = await client['/courses'].get()
+      const response = await client['/api/courses'].get()
       if (!response.ok) throw new Error('Failed to fetch courses.');
       return response.json();
     };
