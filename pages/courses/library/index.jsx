@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 //import { getServerSideProps } from 'next';
 import HeroTextOnly from '../../../components/Hero/HeroTextOnly';
-////import { Lesson, Course, Enrollment } from '../../../models/course';
+import { Lesson, Course, Enrollment } from '../../../models/course';
 import styles from './library.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,7 +10,6 @@ import CourseModal from '../../../components/CourseModal/CourseModal';
 // import { IoMdCloseCircleOutline } from 'react-icons/io';
 import { createClient, NormalizeOAS } from 'fets'
 import openapi from '../../../openapi'
-import { Lesson, Course } from '../../../models/course-type'
 
 const p = console.log;
 
