@@ -51,7 +51,7 @@ const CourseLibrary: NextPage = () => {
     };
     fetchCourses()
       .then(res => {
-        if (res.success) {
+        if (res.result) {
           setCourses(res.result);
         }
       })
