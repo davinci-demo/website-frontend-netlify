@@ -1,68 +1,28 @@
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
-//import { getServerSideProps } from 'next';
+import type { NextPage } from 'next';
 import HeroTextOnly from '../../../components/Hero/HeroTextOnly';
-import { Lesson, Course, Enrollment } from '../../../models/course';
+////import { Lesson, Course, Enrollment } from '../../../models/course';
+import { Lesson } from '../../../models/course';
 import styles from './library.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import CourseModal from '../../../components/CourseModal/CourseModal';
-// import { IoMdCloseCircleOutline } from 'react-icons/io';
-import { createClient, NormalizeOAS } from 'fets'
-import openapi from '../../../openapi'
 
-const p = console.log;
-
-
-
-
-
+import { createClient, type NormalizeOAS, type OASOutput } from 'fets';
+import type openapi from '../../../openapi';
+type Course = OASOutput<NormalizeOAS<typeof openapi>, '/courses/{courseId}', 'get'>;
+////const p = console.log;
 const disclaimerNotice =
   'Please note that the Institute is in its beginning stages, and thus still developing its curriculum. Due to the lack of tutors, we are unable to provide as many courses as of now, but we plan to rapidly expand our curriculum as we gain more volunteers.';
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
 
-
-//** THIS WILL BE USED IN PRODUCTION */
-export async function getStaticProps() {
-  try {
-    // const res = await fetch('http://localhost:3000/api/courses/exampleCourses');
-    ////const res = await fetch('http://localhost:3001/courses'); //<--db.json
-
-    const client = createClient<NormalizeOAS<typeof openapi>>({
-      endpoint: process.env.DEMO_BACKEND_URL
-    })
-
-    const response = await client['/courses'].get()
-    const data = await response.json()
-
-    if (data.success) {
-      return {
-        props: {
-          courses: data.result,
-        },
-      };
-    }
-  } catch (error) {
-    console.error('Error fetching courses:', error);
-    return {
-      props: {
-        courses: []
-      },
-    };
-  }
-}
-
-
-
-function CourseLibrary({courses}) {
+const CourseLibrary: NextPage = () => {
   const [courseModalIsOpen, setCourseModalIsOpen] = useState(false);
   const [courseInfo, setCourseInfo] = useState({});
   const [headersList, setHeadersList] = useState([]);
-  const [data,setData]=useState(courses);
+  const [courses, setCourses] = useState<Course['course'][]>([]);
 
   function openModal(course) {
     setCourseModalIsOpen(true);
@@ -78,14 +38,25 @@ function CourseLibrary({courses}) {
     e.preventDefault();
     openModal(course);
   }
-
-  
-  
   
   ////////////////////////////////////////////////
   useEffect(() => {
-    console.log(`data: ${data}`)
-  },[data]);
+    const client = createClient<NormalizeOAS<typeof openapi>>({
+      endpoint: process.env.DEMO_BACKEND_URL
+    });
+    const fetchCourses = async () => {
+      const response = await client['/courses'].get()
+      if (!response.ok) throw new Error('Failed to fetch courses.');
+      return response.json();
+    };
+    fetchCourses()
+      .then(res => {
+        if (res.success) {
+          setCourses(res.result);
+        }
+      })
+      .catch(console.error());
+  }, []);
 
   useEffect(() => {
     const body = document.body;
@@ -101,13 +72,6 @@ function CourseLibrary({courses}) {
   }, [courseModalIsOpen]);
 
   useEffect(() => {
-    console.log(`courseModalIsOpen: ${courseModalIsOpen}`)
-  },[courseModalIsOpen]);
-
-  useEffect(() => {
-  },[]);
-
-  useEffect(() => {
     const uniqueSubjects = new Set(courses?.map(course => course.subject));
     setHeadersList(Array.from(uniqueSubjects));
   }, [courses]);
@@ -120,30 +84,8 @@ function CourseLibrary({courses}) {
     return acc;
   }, {});
 
-  //**THIS IS USED FOR DEVELOPMENT...db.json is temporarily serving data */
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       // const res = await fetch('http://localhost:3001/api/courses/exampleCourses');
-  //       const res = await fetch('http://localhost:3001/courses');
-  //       const data = await res.json();
-        
-  //       setCourses(data);
-  //     } catch (error) {
-  //       console.error('Error fetching courses:', error);
-  //     }
-  //   };
 
-  //   fetchData();
-  // }, []);
- 
-
-  // useEffect(() => {
-  //   console.log("data");
-  //       console.log(data);
-  // },[data]);
   ////////////////////////////////////////////////
-  
 
   return (
     <>
@@ -197,8 +139,6 @@ function CourseLibrary({courses}) {
     </>
   );
 
-}
-
-
+};
 export default CourseLibrary;
-//handleNavigation={handleNavigation}
+
