@@ -37,8 +37,8 @@ export async function getStaticProps() {
     })
 
     const response = await client['/courses'].get()
-    const data = await response.json();
-
+    const data = await response.json()
+    console.log(data)
     if (data.success) {
       return {
         props: {
